@@ -15,10 +15,33 @@ class Country(models.Model):
         super(Country,self).save(*args,**kwargs)
 
 class Channel(models.Model):
-    channel_id=models.CharField(max_length=200,primary_key=True,default=str(datetime.datetime.now()))
-    channel_name=models.CharField(max_length=200)
-    country_id=models.CharField(max_length=200)
+    
+    channel_name=models.CharField(max_length=200,primary_key=True)
+    channel_url=models.URLField()
+    country_id=models.ForeignKey(Country)
 
     def __str__(self):
-        return self.country_code
+        return self.channel_name
 
+class Entry(models.Model):
+    
+    heading=models.CharField(max_length=200,primary_key=True)
+    #summary=models.URLField()
+    page=models.URLField()
+    thumbnail=models.URLField()
+    date=models.DateField()
+    channel=models.ForeignKey(Channel)
+
+    def __str__(self):
+        return self.heading
+
+class Story(models.Model):
+    #id=models.AutoField()
+    heading = models.ForeignKey(Entry)
+    content=models.TextField()
+    
+    def __str__(self):
+        return self.heading.heading
+    
+
+    

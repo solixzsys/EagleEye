@@ -42,6 +42,15 @@
     <Compile Include="EaglePost\settings.py" />
     <Compile Include="EaglePost\urls.py" />
     <Compile Include="EaglePost\wsgi.py" />
+    <Compile Include="Utility\Scrappers\punchscrapper.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utility\Scrappers\skyscrapper.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utility\Scrappers\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
@@ -54,6 +63,7 @@
     <Folder Include="app\templates\app\" />
     <Folder Include="EaglePost\" />
     <Folder Include="Utility\" />
+    <Folder Include="Utility\Scrappers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
